@@ -5,3 +5,24 @@
 */
 
 package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	var a, c int
+	var b string
+	fmt.Scan(&a)
+
+	sum := 0
+	for i := 1; i <= a; i++ {
+		fmt.Scan(&b)
+		c, _ = strconv.Atoi(b)
+		if len(b) == 2 && c%8 == 0 {
+			sum += c
+		}
+	}
+	fmt.Println(sum)
+}

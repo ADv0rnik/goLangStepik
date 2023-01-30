@@ -11,19 +11,14 @@ func main() {
 }
 
 func minimumFromFour() int {
-	var a int
-	arr := make([]int, 0)
+	var arr [4]int
 
-	for i := 0; i < 4; i++ {
-		fmt.Scan(&a)
-		arr = append(arr, a)
-	}
+	fmt.Scan(&arr[0], &arr[1], &arr[2], &arr[3])
 
-	min := arr[0]
 	for _, value := range arr {
-		if value < min {
-			min = value
+		if value < arr[0] {
+			arr[0] = value
 		}
 	}
-	return min
+	return arr[0]
 }

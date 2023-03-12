@@ -6,3 +6,45 @@
 */
 
 package main
+
+import "fmt"
+
+type Foo struct {
+	On          bool
+	Ammo, Power int
+}
+
+func (f *Foo) Shoot() bool {
+	if f.On == false {
+		return false
+	} else {
+		if f.Ammo > 0 {
+			f.Ammo--
+			return true
+		} else {
+			return false
+		}
+	}
+}
+
+func (f *Foo) RideBike() bool {
+	if f.On == false {
+		return false
+	} else {
+		if f.Power > 0 {
+			f.Power--
+			return true
+		} else {
+			return false
+		}
+	}
+}
+
+func main() {
+	foo := Foo{true, 3, 3}
+	testStruct := &foo
+
+	fmt.Println(testStruct.Ammo)
+	fmt.Println(testStruct.Shoot())
+	fmt.Println(testStruct.Ammo)
+}
